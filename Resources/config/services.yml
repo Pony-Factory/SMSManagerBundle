@@ -1,0 +1,4 @@
+services:
+#    pony_fsms_manager.example:
+#        class: PonyF\SMSManagerBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
