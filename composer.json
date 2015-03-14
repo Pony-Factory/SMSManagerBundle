@@ -14,6 +14,10 @@
     ],
     "require" : {
     },
+    "require" : {
+        "doctrine/doctrine-fixtures-bundle": "~2.2"
+    },
+
     "autoload" : {
         "psr-0" : {
             "PonyF\\SMSManagerBundle" : ""
