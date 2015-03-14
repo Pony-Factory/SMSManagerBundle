@@ -1,0 +1,30 @@
+{
+    "name" : "ponyf/smsmanagerbundle",
+    "description" : "display your sms",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Pony Factory",
+        "email" : "pony.factory@jeremy-nicolas.com"
+    }],
+    "keywords" : [
+        "sms bundle"
+    ],
+    "license" : [
+        "GPL-2.0+"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "PonyF\\SMSManagerBundle" : ""
+        }
+    },
+    "target-dir" : "PonyF/SMSManagerBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0.x-dev"
+        }
+    }
+}
