@@ -22,11 +22,10 @@ class Message
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="from_num", type="string", length=20)
-     */
-    private $fromNum;
+    * @ORM\ManyToOne(targetEntity="PonyF\SMSManagerBundle\Entity\Contact")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $from;
 
     /**
      * @var string
@@ -50,10 +49,9 @@ class Message
     private $date;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="sent_to", type="string", length=20)
-     */
+    * @ORM\ManyToOne(targetEntity="PonyF\SMSManagerBundle\Entity\Contact")
+    * @ORM\JoinColumn(nullable=false)
+    */
     private $sentTo;
 
     /**
@@ -72,29 +70,6 @@ class Message
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set fromNum
-     *
-     * @param string $fromNum
-     * @return Message
-     */
-    public function setFromNum($fromNum)
-    {
-        $this->fromNum = $fromNum;
-
-        return $this;
-    }
-
-    /**
-     * Get fromNum
-     *
-     * @return string 
-     */
-    public function getFromNum()
-    {
-        return $this->fromNum;
     }
 
     /**
@@ -167,12 +142,35 @@ class Message
     }
 
     /**
-     * Set sentTo
+     * Set from
      *
-     * @param string $sentTo
+     * @param \PonyF\SMSManagerBundle\Entity\Contact $from
      * @return Message
      */
-    public function setSentTo($sentTo)
+    public function setFrom(\PonyF\SMSManagerBundle\Entity\Contact $from)
+    {
+        $this->from = $from;
+
+        return $this;
+    }
+
+    /**
+     * Get from
+     *
+     * @return \PonyF\SMSManagerBundle\Entity\Contact 
+     */
+    public function getFrom()
+    {
+        return $this->from;
+    }
+
+    /**
+     * Set sentTo
+     *
+     * @param \PonyF\SMSManagerBundle\Entity\Contact $sentTo
+     * @return Message
+     */
+    public function setSentTo(\PonyF\SMSManagerBundle\Entity\Contact $sentTo)
     {
         $this->sentTo = $sentTo;
 
@@ -182,7 +180,7 @@ class Message
     /**
      * Get sentTo
      *
-     * @return string 
+     * @return \PonyF\SMSManagerBundle\Entity\Contact 
      */
     public function getSentTo()
     {
